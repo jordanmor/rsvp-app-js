@@ -15,6 +15,7 @@ form button {
 h1 {
   font-family: 'Courgette', cursive;
   text-shadow: 0 1px 0 rgba(0,0,0, .4);
+  margin: 0;
   line-height: .65;
   margin-top: .5em;
   margin-bottom: 0;
@@ -64,11 +65,14 @@ button {
   outline: none;
 }
 header {
+  transition: all 0.5s ease-in;
+  background-size: cover;
+  /* background-position: center center; */
+  background-blend-mode: multiply;   
+  color: white;
+  height: 100%;
+  width: 100%;
   text-align: center;
-  background: linear-gradient(90deg, #d4eece, #55b3d0, #1e7eb7),
-              url('../images/outside-venue.jpg') no-repeat;
-              background-blend-mode: multiply;    
-              background-size: cover;   
 }
 header input {
   padding: 12px;
