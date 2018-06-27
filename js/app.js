@@ -18,10 +18,16 @@ form.addEventListener('submit', e => {
     li.textContent = text;
     const label = document.createElement('label');
     label.textContent = 'Confirmed';
+
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     label.appendChild(checkbox);
+
+    const button = document.createElement('button');
+    button.textContent = 'remove';
+    
     li.appendChild(label);
+    li.appendChild(button);
     ul.appendChild(li);
 });
 
@@ -29,7 +35,15 @@ ul.addEventListener('change', e => {
     const checkbox = e.target;
     const checked = checkbox.checked;
     const li = checkbox.parentElement.parentElement;
-    
+
     checked ? li.className = 'responded' : li.className = '';
 
+});
+
+ul.addEventListener('click', e => {
+    if (e.target.tagName === 'BUTTON') {
+        const li = e.target.parentElement;
+        const ul = li.parentElement;
+        ul.removeChild(li);
+    }
 });
